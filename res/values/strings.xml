@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">OneVault-test</string>
+    <string name="btn_income">Add Income</string>
+    <string name="btn_expense">Add Expense</string>
+    <string name="text_amount">Amount:</string>
+    <string name="text_paymethod">Payment Method</string>
+    <string name="button_save">SAVE</string>
 </resources>
