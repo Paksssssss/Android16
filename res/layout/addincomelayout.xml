@@ -36,5 +36,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_save"
-            android:id="@+id/button" android:layout_centerVertical="true" android:layout_alignEnd="@+id/field_amount"/>
+            android:id="@+id/button" android:layout_centerVertical="true" android:layout_alignEnd="@+id/field_amount"
+            android:onClick="ReturnMain"/>
 </RelativeLayout>

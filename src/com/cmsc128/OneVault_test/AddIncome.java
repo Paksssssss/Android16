@@ -15,9 +15,6 @@ import android.widget.Spinner;
  */
 public class AddIncome extends Activity {
 
-    TransactionDBHelper dbHelper = new TransactionDBHelper(getBaseContext());
-    SQLiteDatabase db = dbHelper.getWritableDatabase();
-
     String payment_method[];
 
     @Override
@@ -38,23 +35,18 @@ public class AddIncome extends Activity {
 
     public void ReturnMain(View view){
 
+        DatabaseHandler db = new DatabaseHandler(this);
         EditText editText = (EditText) findViewById(R.id.field_amount);
         Spinner s = (Spinner) findViewById(R.id.spin_paymethod);
 
         double amount = Double.parseDouble(editText.getText().toString());
         String method = s.getSelectedItem().toString();
+        Transaction transaction = new Transaction(amount, method);
 
-        // input to database
-        ContentValues values = new ContentValues();
-        values.put(TransactionFeed.FeedEntry.COL_TRANS_ID , 1);
-        values.put(TransactionFeed.FeedEntry.COL_NAME_AMOUNT, amount );
-        values.put(TransactionFeed.FeedEntry.COL_PAY_METHOD, method);
+        db.addIncome(transaction);
 
-        long rowId;
-        rowId = db.insert(TransactionFeed.FeedEntry.TABLE_NAME, null, values);
-
-        //next activity
         Intent intent = new Intent(this, mainActivity.class);
         startActivity(intent);
     }
+
 }
