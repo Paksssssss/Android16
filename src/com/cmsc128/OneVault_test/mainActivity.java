@@ -5,20 +5,16 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class mainActivity extends Activity {
-
-    TransactionDBHelper dbHelper = new TransactionDBHelper(getBaseContext());
-    SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-    String projection[] = {
-            TransactionFeed.FeedEntry.COL_NAME_AMOUNT,
-            TransactionFeed.FeedEntry.COL_PAY_METHOD
-    };
-
 
     /**
      * Called when the activity is first created.
@@ -27,27 +23,37 @@ public class mainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        DatabaseHandler db = new DatabaseHandler(this);
 
-//        ListView listView = (ListView) findViewById(R.id.listView_transac);
-//        Cursor c = db.query(
-//                TransactionFeed.FeedEntry.TABLE_NAME,
-//                projection,
-//                null,
-//                null,
-//                null,
-//                null,
-//                TransactionFeed.FeedEntry.COL_NAME_AMOUNT + " DESC"
-//        );
-//
-//        String values[] = new String[c.getCount()];
-//        int i = 0;
-//        while(!c.isClosed()){
-//            values[i++] = c.getDouble(0) + c.getString(1);
-//        }
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-//                this, android.R.layout.simple_list_item_1, android.R.id.text1, values
-//        );
+        ListView view = (ListView) findViewById(R.id.listView_transac);
+        createListener(view);
+        ArrayList<Transaction> e = db.getAllIncomeTransactions();
+        ArrayList<String> transaction = new ArrayList<>();
+
+        if(!e.isEmpty()) {
+            for (Transaction t : e) {
+                transaction.add("Transaction ID:  " + t.getTransac_id() + "\nAmount: " + t.getAmount() +
+                        "\nPayment Method: " + t.getPayment_method());
+            }
+        }
+        else{
+            transaction.add("There are no transactions at the moment");
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transaction);
+        view.setAdapter(arrayAdapter);
+
+    }
+
+    private void createListener(ListView Listview) {
+        Listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = (String) (Listview.getItemAtPosition(position));
+                selectedItem = selectedItem.replaceAll("\\s" , "");
+
+            }
+        });
     }
 
     public void AddIncome(View view){
