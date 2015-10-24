@@ -15,3 +15,4 @@
         <activity android:name=".AddIncome" android:label="Add new Income"/>
     </application>
 </manifest>
+
