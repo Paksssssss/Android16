@@ -37,7 +37,7 @@ public class mainActivity extends Activity {
             }
         }
         else{
-            transaction.add("There are no transactions at the moments");
+            transaction.add("There are no transactions at the moment");
         }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transaction);
