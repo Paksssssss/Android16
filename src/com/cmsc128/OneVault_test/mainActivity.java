@@ -27,7 +27,7 @@ public class mainActivity extends Activity {
 
 //        ListView view = (ListView) findViewById(R.id.listView_transac);
 //        createListener(view);
-//        ArrayList<Transaction> e = db.getAllIncomeTransactions();
+        //ArrayList<Transaction> e = db.getAllIncomeTransactions();
 //        ArrayList<String> transaction = new ArrayList<>();
 //
 //        if(!e.isEmpty()) {
@@ -39,10 +39,10 @@ public class mainActivity extends Activity {
 //        else{
 //            transaction.add("There are no transactions at the moment");
 //        }
-//
+
 //        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transaction);
 //        view.setAdapter(arrayAdapter);
-//
+
     }
 
     private void createListener(ListView Listview) {
