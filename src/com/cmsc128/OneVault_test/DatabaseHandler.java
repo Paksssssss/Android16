@@ -90,9 +90,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // CREATE EXPENSE TABLE
     public static final String CREATE_EXPENSE_TABLE = "CREATE TABLE " + TABLE_EXPENSE +
-            "(" + KEY_ID_EXP + " INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, " + KEY_AMOUNT_EXP + " DOUBLE,"+KEY_PAYMENT_METHOD_EXP +
+            "(" + KEY_ID_EXP + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_AMOUNT_EXP + " DOUBLE,"+KEY_PAYMENT_METHOD_EXP +
             " STRING,"+ KEY_DATE_EXP + " DATETIME, "+KEY_REF_CHECK_EXP+" INTEGER,"+KEY_DESCRIPTION_EXP+" VARCHAR(300), "
-            +KEY_TAX_EXP+" DOUBLE, "+KEY_QUANTITY_EXP+" INTEGER, "+KEY_PAYEE+" VARCHAR(30), )ENGINE=InnoDB AUTO_INCREMENT=16598";
+            +KEY_TAX_EXP+" DOUBLE, "+KEY_QUANTITY_EXP+" INTEGER, "+KEY_PAYEE+" VARCHAR(30) )";
+
     // CREATE RECURRENCE TABLE
 
     // CREATE CUSTOM TABLE
@@ -202,7 +203,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         If there is a RetrieveAll method,  return an ArrayList
         E suwat ang parameters (input) then unsa iya e return
      */
-    //Create Expense
+
+
+    //Insert Expense
      public void addExpenseTransaction(Transaction transaction){
          SQLiteDatabase db = this.getWritableDatabase();
 
@@ -233,9 +236,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
         java.util.Date date = sdf1.parse(cursor.getString(3));
         Date dates = new Date(date.getTime());
-        Transaction transaction = new Transaction(cursor.getInt(0), cursor.getDouble(1),
+        Transaction transaction = new Transaction( cursor.getDouble(1),
                 cursor.getString(2),dates,cursor.getInt(4),cursor.getString(5),
                 cursor.getDouble(6),cursor.getInt(7),cursor.getString(8));
+         transaction.setTransac_id(cursor.getInt(0));
         return transaction;
      }
 
@@ -306,7 +310,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     //delete a specific expense transaction
     public void deleteExpenseTransaction(int id){
         String[] string = {Integer.toString(id)};
-        this.getWritableDatabase().delete(TABLE_EXPENSE,KEY_ID_EXP,string);
+        SQLiteDatabase db = this.getReadableDatabase();
+        db.delete(TABLE_EXPENSE,KEY_ID_EXP,string);
+        db.close();
     }
 
     //get the numbers of transactions

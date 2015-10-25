@@ -18,12 +18,11 @@ public class Transaction {
     private String payment_payee_payer;
     Transaction(){}
 
-    public Transaction(int transac_id, double payment_amount,
+    public Transaction( double payment_amount,
                        String payment_method, Date payment_date,
                        int payment_ref_chck, String payment_description,
                        double payment_tax, int payment_quantity,
                        String payment_payee_payer) {
-        this.transac_id = transac_id;
         this.payment_amount = payment_amount;
         this.payment_method = payment_method;
         this.payment_date = payment_date;

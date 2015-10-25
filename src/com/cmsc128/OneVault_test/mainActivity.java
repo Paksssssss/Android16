@@ -25,7 +25,6 @@ public class mainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         DatabaseHandler db = new DatabaseHandler(this);
-
         ListView view = (ListView) findViewById(R.id.listView_transac);
         createListener(view);
         ArrayList<Transaction> e = null;
@@ -65,13 +64,13 @@ public class mainActivity extends Activity {
         });
     }
 
-//    public void AddIncome(View view){
-//        //intent will trigger an activity
-//        //An Intent is an object that provides runtime binding between separate components
-//        // (such as two activities).
-//        // The Intent represents an app’s "intent to do something."
-//        // You can use intents for a wide variety of tasks, but most often they’re used to start another activity.
-//        Intent intent = new Intent(this, AddIncome.class);
-//        startActivity(intent);
-//    }
+    public void AddExpenses(View view){
+        //intent will trigger an activity
+        //An Intent is an object that provides runtime binding between separate components
+        // (such as two activities).
+        // The Intent represents an app’s "intent to do something."
+        // You can use intents for a wide variety of tasks, but most often they’re used to start another activity.
+        Intent intent = new Intent(this, AddExpense.class);
+        startActivity(intent);
+    }
 }
