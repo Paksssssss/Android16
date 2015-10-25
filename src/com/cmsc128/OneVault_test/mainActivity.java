@@ -25,23 +25,22 @@ public class mainActivity extends Activity {
         setContentView(R.layout.main);
         DatabaseHandler db = new DatabaseHandler(this);
 
-//        ListView view = (ListView) findViewById(R.id.listView_transac);
-//        createListener(view);
-        //ArrayList<Transaction> e = db.getAllIncomeTransactions();
-//        ArrayList<String> transaction = new ArrayList<>();
-//
-//        if(!e.isEmpty()) {
-//            for (Transaction t : e) {
-//                transaction.add("Transaction ID:  " + t.getTransac_id() + "\nAmount: " + t.getAmount() +
-//                        "\nPayment Method: " + t.getPayment_method());
-//            }
-//        }
-//        else{
-//            transaction.add("There are no transactions at the moment");
-//        }
+        ListView view = (ListView) findViewById(R.id.listView_transac);
+        createListener(view);
+        ArrayList<Transaction> e = db.getAllIncomeTransactions();
+        ArrayList<String> transaction = new ArrayList<>();
 
-//        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transaction);
-//        view.setAdapter(arrayAdapter);
+        if(!e.isEmpty()) {
+            for (Transaction t : e) {
+               // items to list
+            }
+        }
+        else{
+            transaction.add("No transactions at the moment");
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transaction);
+        view.setAdapter(arrayAdapter);
 //
     }
 

@@ -1,6 +1,5 @@
 package com.cmsc128.OneVault_test;
 
-import android.app.admin.DeviceAdminInfo;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by radleyrosal on 10/22/2015.
@@ -19,17 +17,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "transactions";
 
+    // column ids for each attributes
+    private final int INDEX_INCOME_ID = 0;
+    private final int INDEX_INCOME_AMOUNT = 1;
+    private final int INDEX_INCOME_DATE = 2;
+    private final int INDEX_INCOME_REF_CHECK = 3;
+    private final int INDEX_INCOME_DESCRIPTION = 4;
+    private final int INDEX_INCOME_TAX = 5;
+    private final int INDEX_INCOME_QUANTITY = 6;
+    private final int INDEX_INCOME_PAYER = 7;
+
     //DECLARE INCOME TABLE
     private static final String TABLE_INCOME = "income";
     //attributes
-    private static final String KEY_ID = "transac_id"; //INTEGER
-    private static final String KEY_AMOUNT = "amount"; // DOUBLE
-    private static final String KEY_DATE = "date"; // DATETIME
-    private static final String KEY_REF_CHECK = "ref_check"; // INTEGER
-    private static final String KEY_DESCRIPTION = "description"; // VARCHAR(200)
-    private static final String KEY_TAX = "tax"; //DOUBLE
-    private static final String KEY_QUANTITY = "quantity"; //INTEGER
-    private static final String KEY_PAYER = "payer"; //VARCHAR(30)
+    private static final String KEY_ID_INCOME = "transac_id"; //INTEGER
+    private static final String KEY_AMOUNT_INCOME = "amount"; // DOUBLE
+    private static final String KEY_DATE_INCOME = "date"; // DATETIME
+    private static final String KEY_REF_CHECK_INCOME = "ref_check"; // INTEGER
+    private static final String KEY_DESCRIPTION_INCOME = "description"; // VARCHAR(200)
+    private static final String KEY_TAX_INCOME = "tax"; //DOUBLE
+    private static final String KEY_QUANTITY_INCOME = "quantity"; //INTEGER
+    private static final String KEY_PAYER_INCOME = "payer"; //VARCHAR(30)
 
     //DECLARE EXPENSE TABLE
     private static final String TABLE_EXPENSE = "expense";
@@ -81,8 +89,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String FKEY_TRANSAC_ID = "transac_id";
 
 
-
     // CREATE INCOME TABLE
+    private static final String CREATE_INCOME_TABLE =
+            "CREATE TABLE " + TABLE_INCOME + " (" + KEY_ID_INCOME + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    KEY_AMOUNT_INCOME + " DOUBLE, " + KEY_DATE_INCOME + " DATETIME, " + KEY_REF_CHECK_INCOME + " INTEGER, " +
+                    KEY_DESCRIPTION_INCOME + " VARCHAR(200), " + KEY_TAX_INCOME + " DOUBLE, " + KEY_QUANTITY_INCOME + " INTEGER, " +
+                    KEY_PAYER_INCOME + " VARCHAR(30))";
 
     // CREATE EXPENSE TABLE
 
@@ -98,13 +110,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //db.execSQL(CREATE_INCOME_TABLE);
+        db.execSQL(CREATE_INCOME_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_INCOME);
-
         onCreate(db);
     }
 
@@ -121,62 +132,60 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-//        values.put(KEY_ID , TRANSACTION_ID++);
-//        values.put(KEY_AMOUNT, transaction.getAmount());
-//        values.put(KEY_PAYMETHOD, transaction.getPayment_method());
+
+        values.put(KEY_AMOUNT_INCOME, transaction.getKEY_AMOUNT());
+        values.put(KEY_DATE_INCOME, transaction.getKEY_DATE());
+        values.put(KEY_REF_CHECK_INCOME, transaction.getKEY_REF_CHECK());
+        values.put(KEY_DESCRIPTION_INCOME, transaction.getKEY_DESCRIPTION());
+        values.put(KEY_TAX_INCOME, transaction.getKEY_TAX());
+        values.put(KEY_QUANTITY_INCOME, transaction.getKEY_QUANTITY());
+        values.put(KEY_PAYER_INCOME, transaction.getKEY_PAYER());
 
         db.insert(TABLE_INCOME, null, values);
         db.close();
     }
 
-//    public Transaction getIncomeTransaction(int id){
-//        //TODO
-//        SQLiteDatabase db = this.getReadableDatabase();
-//
-//        Cursor cursor = db.query(TABLE_INCOME, new String[] {KEY_ID, KEY_AMOUNT, KEY_PAYMETHOD}, KEY_ID + "=?",
-//                new String[] {String.valueOf(id)}, null, null, null, null);
-//
-//        if(cursor!=null)
-//            cursor.moveToFirst();
-//
-//        Transaction transaction = new Transaction(cursor.getDouble(1), cursor.getString(2) );
-//
-//        return transaction;
-//    }
-
-    // retrieve income transactions
-//    public ArrayList<Transaction> getAllIncomeTransactions(){
-////        ArrayList<Transaction> transactionList = new ArrayList<>();
-////        String query = "SELECT * FROM " + TABLE_INCOME;
-////
-////        SQLiteDatabase db = this.getWritableDatabase();
-////        Cursor cursor = db.rawQuery(query, null);
-////
-////        if(cursor.moveToFirst()){
-////            do{
-////                Transaction transaction = new Transaction();
-////                transaction.setTransac_id(cursor.getInt(0));
-////                transaction.setAmount(cursor.getDouble(1));
-////                transaction.setPayment_method(cursor.getString(2));
-////
-////                transactionList.add(transaction);
-////            }while(cursor.moveToNext());
-////        }
-////
-////        return transactionList;
-//
-//    }
+    public Transaction getIncomeTransaction(int id){
+        //TODO
+        return null;
+    }
 
 
-//    public int getIncomeTransactionCount(){
-//        String query = "SELECT * FROM " + TABLE_INCOME;
-//
-//        SQLiteDatabase db = this.getReadableDatabase();
-//        Cursor cursor = db.rawQuery(query, null);
-//        cursor.close();
-//
-//        return cursor.getCount();
-//    }
+    public ArrayList<Transaction> getAllIncomeTransactions(){
+        ArrayList<Transaction> transactionList = new ArrayList<>();
+        String query = "SELECT * FROM " + TABLE_INCOME;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst()){
+            do{
+                Transaction transaction = new Transaction();
+                transaction.setKEY_AMOUNT(cursor.getDouble(INDEX_INCOME_AMOUNT));
+                transaction.setKEY_DATE(cursor.getInt(INDEX_INCOME_DATE));
+                transaction.setKEY_REF_CHECK(cursor.getInt(INDEX_INCOME_REF_CHECK));
+                transaction.setKEY_DESCRIPTION(cursor.getString(INDEX_INCOME_DESCRIPTION));
+                transaction.setKEY_TAX(cursor.getDouble(INDEX_INCOME_TAX));
+                transaction.setKEY_QUANTITY(cursor.getInt(INDEX_INCOME_QUANTITY));
+                transaction.setKEY_PAYER(cursor.getString(INDEX_INCOME_PAYER));
+                transactionList.add(transaction);
+            }while(cursor.moveToNext());
+        }
+
+        return transactionList;
+
+    }
+
+    // return income transaction count
+    public int getIncomeTransactionCount(){
+        String query = "SELECT * FROM " + TABLE_INCOME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        cursor.close();
+
+        return cursor.getCount();
+    }
 
 //    public int updateIncomeTransaction(Transaction transaction){
 //
