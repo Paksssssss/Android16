@@ -21,30 +21,9 @@ public class AddIncome extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addincomelayout);
-
-        payment_method = new String[3];
-        payment_method[0] = "Cash";
-        payment_method[1] = "Credit Card";
-        payment_method[2] = "Check";
-
-        Spinner s = (Spinner) findViewById(R.id.spin_paymethod);
-        ArrayAdapter adapter = new ArrayAdapter(
-                this, android.R.layout.simple_spinner_dropdown_item, payment_method);
-        s.setAdapter(adapter);
     }
 
-    public void ReturnMain(View view){
-
-        DatabaseHandler db = new DatabaseHandler(this);
-        EditText editText = (EditText) findViewById(R.id.field_amount);
-        Spinner s = (Spinner) findViewById(R.id.spin_paymethod);
-
-        double amount = Double.parseDouble(editText.getText().toString());
-        String method = s.getSelectedItem().toString();
-        Transaction transaction = new Transaction(amount, method);
-
-        db.addIncome(transaction);
-
+    public void SaveData(View view){
         Intent intent = new Intent(this, mainActivity.class);
         startActivity(intent);
     }
