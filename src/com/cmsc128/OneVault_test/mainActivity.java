@@ -42,7 +42,7 @@ public class mainActivity extends Activity {
 
 //        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, transaction);
 //        view.setAdapter(arrayAdapter);
-
+//
     }
 
     private void createListener(ListView Listview) {
