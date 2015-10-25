@@ -16,13 +16,15 @@ public class Transaction {
     private double payment_tax;
     private int payment_quantity;
     private String payment_payee_payer;
+    private String payment_tags;
+
     Transaction(){}
 
-    public Transaction( double payment_amount,
-                       String payment_method, Date payment_date,
-                       int payment_ref_chck, String payment_description,
-                       double payment_tax, int payment_quantity,
-                       String payment_payee_payer) {
+    public Transaction(double payment_amount, String payment_method,
+                       Date payment_date, int payment_ref_chck,
+                       String payment_description, double payment_tax,
+                       int payment_quantity, String payment_payee_payer,
+                       String payment_tags) {
         this.payment_amount = payment_amount;
         this.payment_method = payment_method;
         this.payment_date = payment_date;
@@ -31,6 +33,7 @@ public class Transaction {
         this.payment_tax = payment_tax;
         this.payment_quantity = payment_quantity;
         this.payment_payee_payer = payment_payee_payer;
+        this.payment_tags = payment_tags;
     }
 
     public String getPayment_method() {
@@ -76,4 +79,8 @@ public class Transaction {
     public String getPayment_payee_payer() {return payment_payee_payer;}
 
     public void setPayment_payee_payer(String payment_payee_payer) {this.payment_payee_payer = payment_payee_payer;}
+
+    public String getPayment_tags() {return payment_tags;}
+
+    public void setPayment_tags(String payment_tags) {this.payment_tags = payment_tags;}
 }

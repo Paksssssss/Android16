@@ -44,7 +44,7 @@ public class AddExpense extends Activity {
         double amount = Double.parseDouble(editText.getText().toString());
         String method = s.getSelectedItem().toString();
 
-        editText = (EditText) findViewById(R.id.filed_ref_chck);
+        editText = (EditText) findViewById(R.id.field_refOrChck);
         int refOrCheck = Integer.parseInt(editText.getText().toString());
 
         editText = (EditText) findViewById(R.id.field_description);
@@ -59,9 +59,12 @@ public class AddExpense extends Activity {
         editText = (EditText) findViewById(R.id.field_payee);
         String payee = editText.getText().toString();
 
+        editText = (EditText) findViewById(R.id.field_tags);
+        String tags = editText.getText().toString();
+
         Date date = new Date(2012,10,11);
 
-        Transaction transaction = new Transaction(amount, method,date,refOrCheck,description,tax,quantity,payee);
+        Transaction transaction = new Transaction(amount, method,date,refOrCheck,description,tax,quantity,payee,tags);
 
         db.addExpenseTransaction(transaction);
 

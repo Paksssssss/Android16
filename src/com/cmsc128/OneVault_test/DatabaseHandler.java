@@ -46,6 +46,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_TAX_EXP = "tax";  //DOUBLE
     private static final String KEY_QUANTITY_EXP = "quantity"; //INTEGER
     private static final String KEY_PAYEE = "payee"; //VARCHAR(30)
+    private static final String KEY_TAGS= "payee"; //VARCHAR(30)
 
     //DECLARE CUSTOM TABLE
     private static final String TABLE_CUSTOM = "custom_values";
@@ -92,7 +93,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String CREATE_EXPENSE_TABLE = "CREATE TABLE " + TABLE_EXPENSE +
             "(" + KEY_ID_EXP + " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_AMOUNT_EXP + " DOUBLE,"+KEY_PAYMENT_METHOD_EXP +
             " STRING,"+ KEY_DATE_EXP + " DATETIME, "+KEY_REF_CHECK_EXP+" INTEGER,"+KEY_DESCRIPTION_EXP+" VARCHAR(300), "
-            +KEY_TAX_EXP+" DOUBLE, "+KEY_QUANTITY_EXP+" INTEGER, "+KEY_PAYEE+" VARCHAR(30) )";
+            +KEY_TAX_EXP+" DOUBLE, "+KEY_QUANTITY_EXP+" INTEGER, "+KEY_PAYEE+" VARCHAR(30), "+KEY_TAGS+" VARCHAR(30) )";
 
     // CREATE RECURRENCE TABLE
 
@@ -218,6 +219,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
          values.put(KEY_TAX_EXP, transaction.getPayment_tax());
          values.put(KEY_QUANTITY_EXP, transaction.getPayment_quantity());
          values.put(KEY_PAYEE, transaction.getPayment_payee_payer());
+         values.put(KEY_TAGS, transaction.getPayment_tags());
 
          db.insert(TABLE_EXPENSE, null, values);
          db.close();
@@ -238,7 +240,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Date dates = new Date(date.getTime());
         Transaction transaction = new Transaction( cursor.getDouble(1),
                 cursor.getString(2),dates,cursor.getInt(4),cursor.getString(5),
-                cursor.getDouble(6),cursor.getInt(7),cursor.getString(8));
+                cursor.getDouble(6),cursor.getInt(7),cursor.getString(8),cursor.getString(9));
          transaction.setTransac_id(cursor.getInt(0));
         return transaction;
      }
@@ -265,6 +267,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 transaction.setPayment_tax(cursor.getDouble(6));
                 transaction.setPayment_quantity(cursor.getInt(7));
                 transaction.setPayment_payee_payer(cursor.getString(8));
+                transaction.setPayment_tags(cursor.getString(9));
 
                 transactionList.add(transaction);
             }while(cursor.moveToNext());
@@ -288,6 +291,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TAX_EXP, transaction.getPayment_tax());
         values.put(KEY_QUANTITY_EXP, transaction.getPayment_quantity());
         values.put(KEY_PAYEE, transaction.getPayment_payee_payer());
+        values.put(KEY_TAGS, transaction.getPayment_tags());
 
         String[] string = {Integer.toString(transaction.getTransac_id())};
 

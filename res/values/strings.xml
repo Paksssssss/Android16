@@ -13,4 +13,5 @@
     <string name="tax">Tax:</string>
     <string name="quantity">Quantity:</string>
     <string name="payee">Payee:</string>
+    <string name="tags">Tags:</string>
 </resources>

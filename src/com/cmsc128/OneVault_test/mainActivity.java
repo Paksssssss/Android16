@@ -41,7 +41,7 @@ public class mainActivity extends Activity {
                          "\nPayment Method: " + t.getPayment_method() + "\nDate: " + t.getPayment_date() +
                         "\nReference/cheque: " + t.getPayment_ref_chck() + "\nDescription: " + t.getPayment_description() +
                         "\nTax: " + t.getPayment_tax() + "\nQuantity: " + t.getPayment_quantity() +
-                        "\nPayee: " + t.getPayment_payee_payer());
+                        "\nPayee: " + t.getPayment_payee_payer() + "\nTags: " + t.getPayment_tags());
             }
         }
         else{
