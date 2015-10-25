@@ -62,7 +62,7 @@ public class AddExpense extends Activity {
         editText = (EditText) findViewById(R.id.field_tags);
         String tags = editText.getText().toString();
 
-        Date date = new Date(2012,10,11);
+        Date date = new Date(20121010);
 
         Transaction transaction = new Transaction(amount, method,date,refOrCheck,description,tax,quantity,payee,tags);
 

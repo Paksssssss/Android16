@@ -29,13 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92a2c6ec-fb40-4f75-aafb-cccb193580a7" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Marko\Documents\GitHub\Android16\res\layout-land\addexpenselayout.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java" afterPath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/DatabaseHandler.java" afterPath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/DatabaseHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/Transaction.java" afterPath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/Transaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/addexpenselayout.xml" afterPath="$PROJECT_DIR$/res/layout/addexpenselayout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/mainActivity.java" afterPath="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/mainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OneVault-test.iws" />
@@ -59,14 +54,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="addexpenselayout.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/addexpenselayout.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
+      <file leaf-file-name="mainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/mainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </entry>
+      </file>
+      <file leaf-file-name="AddExpense.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7757256">
+              <caret line="66" column="74" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -103,11 +105,11 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/Transaction.java" />
-        <option value="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/res/layout/addexpenselayout.xml" />
-        <option value="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java" />
         <option value="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/mainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout-land/addexpenselayout.xml" />
+        <option value="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/DatabaseHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java" />
       </list>
     </option>
   </component>
@@ -234,7 +236,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
     <property name="ToolWindowAndroid.ShowToolbar" value="false" />
@@ -526,7 +528,7 @@
       <option name="number" value="Default" />
       <updated>1445691177185</updated>
       <workItem from="1445691177456" duration="1056000" />
-      <workItem from="1445728236351" duration="27847000" />
+      <workItem from="1445728236351" duration="29813000" />
     </task>
     <task id="LOCAL-00001" summary="Master">
       <created>1445692113208</created>
@@ -552,31 +554,37 @@
       <option name="project" value="LOCAL" />
       <updated>1445754516366</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added tags in the database&#10;">
+      <created>1445759381370</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1445759381370</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28903000" />
+    <option name="totallyTimeSpent" value="30869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1036" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.45901638" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.45491803" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34094617" sideWeight="0.5327869" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3360522" sideWeight="0.53688526" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12704918" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34094617" sideWeight="0.46721312" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3360522" sideWeight="0.46311477" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.6623165" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.6623165" sideWeight="0.5" order="10" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1762295" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20389344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -608,7 +616,8 @@
     <MESSAGE value="Updated with Exepense CRUD(no front end)" />
     <MESSAGE value="Expense Front End" />
     <MESSAGE value="Expense Front End V1&#10;Added AddExpense.java&#10;Deleted AddIncome.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Expense Front End V1&#10;Added AddExpense.java&#10;Deleted AddIncome.java" />
+    <MESSAGE value="Added tags in the database&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tags in the database&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -654,14 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36702126">
-          <caret line="66" column="116" selection-start-line="66" selection-start-column="116" selection-end-line="66" selection-end-column="116" />
           <folding />
         </state>
       </provider>
@@ -733,30 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/DatabaseHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.119681">
-          <caret line="280" column="65" selection-start-line="280" selection-start-column="65" selection-end-line="280" selection-end-column="65" />
-          <folding>
-            <element signature="method#addExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
-            <element signature="method#getExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
-            <element signature="method#getAllExpenseTransactions#0;class#DatabaseHandler#0" expanded="false" />
-            <element signature="method#updateExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
-            <element signature="method#deleteAllExpenseTransactions#0;class#DatabaseHandler#0" expanded="false" />
-            <element signature="method#deleteExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
-            <element signature="method#getExpenseTransactionCount#0;class#DatabaseHandler#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/mainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="99" selection-start-line="43" selection-start-column="99" selection-end-line="43" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.356383">
@@ -776,6 +753,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/DatabaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.29551452">
+          <caret line="44" column="83" selection-start-line="44" selection-start-column="83" selection-end-line="44" selection-end-column="83" />
+          <folding>
+            <element signature="method#addExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
+            <element signature="method#getExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
+            <element signature="method#updateExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
+            <element signature="method#deleteAllExpenseTransactions#0;class#DatabaseHandler#0" expanded="false" />
+            <element signature="method#deleteExpenseTransaction#0;class#DatabaseHandler#0" expanded="false" />
+            <element signature="method#getExpenseTransactionCount#0;class#DatabaseHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/addexpenselayout.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
@@ -783,6 +775,22 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/mainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cmsc128/OneVault_test/AddExpense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7757256">
+          <caret line="66" column="74" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
           <folding />
         </state>
       </provider>

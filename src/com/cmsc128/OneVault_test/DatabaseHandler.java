@@ -46,7 +46,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_TAX_EXP = "tax";  //DOUBLE
     private static final String KEY_QUANTITY_EXP = "quantity"; //INTEGER
     private static final String KEY_PAYEE = "payee"; //VARCHAR(30)
-    private static final String KEY_TAGS= "payee"; //VARCHAR(30)
+    private static final String KEY_TAGS= "tags"; //VARCHAR(30)
 
     //DECLARE CUSTOM TABLE
     private static final String TABLE_CUSTOM = "custom_values";
