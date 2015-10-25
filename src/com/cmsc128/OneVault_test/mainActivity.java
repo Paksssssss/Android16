@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,13 +28,21 @@ public class mainActivity extends Activity {
 
         ListView view = (ListView) findViewById(R.id.listView_transac);
         createListener(view);
-        ArrayList<Transaction> e = db.getAllIncomeTransactions();
+        ArrayList<Transaction> e = null;
+        try {
+            e = db.getAllExpenseTransactions();
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
         ArrayList<String> transaction = new ArrayList<>();
 
         if(!e.isEmpty()) {
             for (Transaction t : e) {
-                transaction.add("Transaction ID:  " + t.getTransac_id() + "\nAmount: " + t.getAmount() +
-                        "\nPayment Method: " + t.getPayment_method());
+                transaction.add("Transaction ID:  " + t.getTransac_id() + "\nAmount: " + t.getPayment_amount() +
+                         "\nPayment Method: " + t.getPayment_method() + "\nDate: " + t.getPayment_date() +
+                        "\nReference/cheque: " + t.getPayment_ref_chck() + "\nDescription: " + t.getPayment_description() +
+                        "\nTax: " + t.getPayment_tax() + "\nQuantity: " + t.getPayment_quantity() +
+                        "\nPayee: " + t.getPayment_payee_payer());
             }
         }
         else{
@@ -56,13 +65,13 @@ public class mainActivity extends Activity {
         });
     }
 
-    public void AddIncome(View view){
-        //intent will trigger an activity
-        //An Intent is an object that provides runtime binding between separate components
-        // (such as two activities).
-        // The Intent represents an app’s "intent to do something."
-        // You can use intents for a wide variety of tasks, but most often they’re used to start another activity.
-        Intent intent = new Intent(this, AddIncome.class);
-        startActivity(intent);
-    }
+//    public void AddIncome(View view){
+//        //intent will trigger an activity
+//        //An Intent is an object that provides runtime binding between separate components
+//        // (such as two activities).
+//        // The Intent represents an app’s "intent to do something."
+//        // You can use intents for a wide variety of tasks, but most often they’re used to start another activity.
+//        Intent intent = new Intent(this, AddIncome.class);
+//        startActivity(intent);
+//    }
 }
