@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:id="@+id/layout_income">
+
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/scrollView" android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true" android:layout_alignParentTop="true">
+            <TextView
+                    android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_amount"
+                    android:layout_marginTop="30dp" android:layout_marginLeft="20dp" />
+            <EditText
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/field_amount"
+                    android:layout_marginTop="25dp" android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_date"
+                    android:layout_marginTop="85dp" android:layout_marginLeft="20dp"
+                    />
+            <EditText
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/field_date"
+                    android:layout_marginTop="80dp" android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_ref"
+                    android:layout_marginTop="140dp" android:layout_marginLeft="20dp"/>
+            <EditText
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="135dp" android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" android:layout_marginRight="50dp" android:id="@+id/field_ref"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_tax"
+                    android:layout_marginTop="195dp" android:layout_marginLeft="20dp"/>
+            <EditText
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/field_tax"
+                    android:layout_marginTop="190dp" android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_quantity"
+                    android:layout_marginTop="250dp" android:layout_marginLeft="20dp"/>
+            <EditText
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="245dp" android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true" android:layout_marginRight="50dp"
+                    android:id="@+id/field_quantity"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/text_payee"
+                    android:layout_marginTop="305dp" android:layout_marginLeft="20dp"/>
+            <EditText
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/field_payee"
+                android:layout_marginTop="300dp" android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/text_description"
+                android:layout_marginTop="360dp" android:layout_marginLeft="20dp"/>
+            <EditText
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/field_desc"
+                android:layout_marginTop="360dp" android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/btn_save" android:text="@string/text_save"
+                android:layout_marginTop="425dp" android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" android:layout_marginRight="50dp"
+                    />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

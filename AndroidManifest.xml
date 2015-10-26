@@ -12,7 +12,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AddIncome" android:label="Add new Income"/>
+        <activity
+            android:name=".AddIncome"
+            android:label="Add new Income"/>
+        <activity
+            android:name=".AddExpense"
+            android:label="Add an Expense" />
     </application>
 </manifest>
 
