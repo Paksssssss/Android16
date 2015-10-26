@@ -246,10 +246,19 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 values2.put(KEY_TAX_INCOME, transaction.getKEY_TAX());
                 values2.put(KEY_QUANTITY_INCOME, transaction.getKEY_QUANTITY());
                 values2.put(KEY_PAYER_INCOME, transaction.getKEY_PAYER());
+                db.insert(TABLE_INCOME,null, values2);
             }
+            else{
 
+                values2.put(KEY_AMOUNT_EXP, transaction.getKEY_AMOUNT());
+                values2.put(KEY_REF_CHECK_EXP, transaction.getKEY_REF_CHECK());
+                values2.put(KEY_DESCRIPTION_EXP, transaction.getKEY_DESCRIPTION());
+                values2.put(KEY_TAX_EXP, transaction.getKEY_TAX());
+                values2.put(KEY_QUANTITY_EXP, transaction.getKEY_QUANTITY());
+                values2.put(KEY_PAYEE, transaction.getKEY_PAYER());
+                db.insert(TABLE_EXPENSE,null, values2);
+            }
             db.insert(TABLE_RECURRENCE, null, values1);
-            db.insert(TABLE_INCOME,null, values2);
             db.close();
         }
 
