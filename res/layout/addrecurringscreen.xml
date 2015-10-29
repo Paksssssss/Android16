@@ -32,7 +32,7 @@
                       android:layout_alignParentEnd="true" android:layout_marginRight="50dp"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/text_amount"
-                      android:layout_marginTop="30dp" android:layout_marginLeft="20dp"/>
+                      android:layout_marginTop="30dp" android:layout_marginLeft="20dp" android:id="@+id/textView"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:textAppearance="?android:attr/textAppearanceMedium" android:text="@string/text_tax"
                       android:layout_marginTop="85dp" android:layout_marginLeft="20dp" />
@@ -51,7 +51,7 @@
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:textAppearance="?android:attr/textAppearanceMedium"
                       android:text="@string/text_description" android:layout_marginTop="360dp"
-                      android:layout_marginLeft="20dp" />
+                      android:layout_marginLeft="20dp" android:id="@+id/textView2"/>
             <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button"
                     android:text="@string/text_save" android:layout_marginTop="425dp"
                     android:layout_alignParentTop="true" android:layout_alignParentEnd="true"

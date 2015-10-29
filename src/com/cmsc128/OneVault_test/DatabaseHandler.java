@@ -155,7 +155,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-
+        ContentValues recValues = new ContentValues();
         values.put(KEY_AMOUNT_INCOME, transaction.getKEY_AMOUNT());
         values.put(KEY_DATE_INCOME, transaction.getKEY_DATE());
         values.put(KEY_REF_CHECK_INCOME, transaction.getKEY_REF_CHECK());
@@ -163,7 +163,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TAX_INCOME, transaction.getKEY_TAX());
         values.put(KEY_QUANTITY_INCOME, transaction.getKEY_QUANTITY());
         values.put(KEY_PAYER_INCOME, transaction.getKEY_PAYER());
-
+        if(transaction.isKEY_IS_INCOMERECURRENCE()){
+            recValues = addRecurring(transaction);
+            db.insert(TABLE_RECURRENCE,null,recValues);
+        }
         db.insert(TABLE_INCOME, null, values);
         db.close();
     }
@@ -230,36 +233,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //pakson
 
 
-        public void  addRecurring(RecurringTransaction transaction){
-            SQLiteDatabase db = this.getWritableDatabase();
-
+        public ContentValues  addRecurring(Transaction transaction){
             ContentValues values1 = new ContentValues();
-            ContentValues values2 = new ContentValues();
             values1.put(KEY_NO_PAYMENTS, transaction.getKEY_NOPAYMENTS());
             values1.put(KEY_FREQUENCY, transaction.getKEY_FREQUENCY());
             values1.put(KEY_FIRST_PAYMENT, transaction.getKEY_DATE());
             values1.put(KEY_IS_INCOME_RECURRENCE, transaction.isKEY_IS_INCOMERECURRENCE());
-            if(transaction.isKEY_IS_INCOMERECURRENCE()){
-                values2.put(KEY_AMOUNT_INCOME, transaction.getKEY_AMOUNT());
-                values2.put(KEY_REF_CHECK_INCOME, transaction.getKEY_REF_CHECK());
-                values2.put(KEY_DESCRIPTION_INCOME, transaction.getKEY_DESCRIPTION());
-                values2.put(KEY_TAX_INCOME, transaction.getKEY_TAX());
-                values2.put(KEY_QUANTITY_INCOME, transaction.getKEY_QUANTITY());
-                values2.put(KEY_PAYER_INCOME, transaction.getKEY_PAYER());
-                db.insert(TABLE_INCOME,null, values2);
-            }
-            else{
-
-                values2.put(KEY_AMOUNT_EXP, transaction.getKEY_AMOUNT());
-                values2.put(KEY_REF_CHECK_EXP, transaction.getKEY_REF_CHECK());
-                values2.put(KEY_DESCRIPTION_EXP, transaction.getKEY_DESCRIPTION());
-                values2.put(KEY_TAX_EXP, transaction.getKEY_TAX());
-                values2.put(KEY_QUANTITY_EXP, transaction.getKEY_QUANTITY());
-                values2.put(KEY_PAYEE, transaction.getKEY_PAYER());
-                db.insert(TABLE_EXPENSE,null, values2);
-            }
-            db.insert(TABLE_RECURRENCE, null, values1);
-            db.close();
+            return values1;
         }
 
         //melgo

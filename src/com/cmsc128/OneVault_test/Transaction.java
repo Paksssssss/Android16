@@ -14,11 +14,16 @@ public class Transaction {
     protected String KEY_DESCRIPTION;
     protected String KEY_PAYMENTMETHOD;
     protected String KEY_STATUS;
+    protected boolean KEY_IS_INCOMERECURRENCE;
+    protected int KEY_NOPAYMENTS;
+    protected int KEY_FREQUENCY;
+
 
     Transaction(){}
 
-    public Transaction(double KEY_AMOUNT, int KEY_DATE, int KEY_REF_CHECK, String KEY_DESCRIPTION, double KEY_TAX,
-                       int KEY_QUANTITY, String KEY_PAYER, String KEY_PAYMENTMETHOD, String KEY_STATUS){
+    public Transaction(double KEY_AMOUNT, int KEY_DATE, int KEY_REF_CHECK, int KEY_NOPAYMENTS, String KEY_DESCRIPTION, double KEY_TAX,
+                       int KEY_QUANTITY, String KEY_PAYER, String KEY_PAYMENTMETHOD, String KEY_STATUS, int KEY_FREQUENCY,
+                       boolean KEY_IS_INCOMERECURRENCE){
         this.KEY_AMOUNT = KEY_AMOUNT;
         this.KEY_DATE = KEY_DATE;
         this.KEY_REF_CHECK = KEY_REF_CHECK;
@@ -28,6 +33,36 @@ public class Transaction {
         this.KEY_PAYER = KEY_PAYER;
         this.KEY_PAYMENTMETHOD = KEY_PAYMENTMETHOD;
         this.KEY_STATUS = KEY_STATUS;
+        this.KEY_STATUS = KEY_STATUS;
+        this.KEY_NOPAYMENTS = KEY_NOPAYMENTS;
+        this.KEY_FREQUENCY = KEY_FREQUENCY;
+        this.KEY_IS_INCOMERECURRENCE = KEY_IS_INCOMERECURRENCE;
+    }
+
+
+
+    public int getKEY_NOPAYMENTS() {
+        return KEY_NOPAYMENTS;
+    }
+
+    public void setKEY_NOPAYMENTS(int KEY_NOPAYMENTS) {
+        this.KEY_NOPAYMENTS = KEY_NOPAYMENTS;
+    }
+
+    public int getKEY_FREQUENCY() {
+        return KEY_FREQUENCY;
+    }
+
+    public void setKEY_FREQUENCY(int KEY_FREQUENCY) {
+        this.KEY_FREQUENCY = KEY_FREQUENCY;
+    }
+
+    public boolean isKEY_IS_INCOMERECURRENCE() {
+        return KEY_IS_INCOMERECURRENCE;
+    }
+
+    public void setKEY_IS_INCOMERECURRENCE(boolean KEY_IS_INCOMERECURRENCE) {
+        this.KEY_IS_INCOMERECURRENCE = KEY_IS_INCOMERECURRENCE;
     }
 
     public double getKEY_AMOUNT() {

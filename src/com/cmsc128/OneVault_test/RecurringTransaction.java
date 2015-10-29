@@ -5,10 +5,6 @@ package com.cmsc128.OneVault_test;
  */
 
 public class RecurringTransaction extends Transaction {
-    protected int KEY_NOPAYMENTS;
-    protected int KEY_FREQUENCY;
-    protected boolean KEY_IS_INCOMERECURRENCE;
-
     //private String KEY_REMINDER;
     //private Time KEY_TIMEREMINDER;
 
@@ -31,27 +27,4 @@ public class RecurringTransaction extends Transaction {
         this.KEY_IS_INCOMERECURRENCE = KEY_IS_INCOMERECURRENCE;
     }
 
-    public int getKEY_NOPAYMENTS() {
-        return KEY_NOPAYMENTS;
-    }
-
-    public void setKEY_NOPAYMENTS(int KEY_NOPAYMENTS) {
-        this.KEY_NOPAYMENTS = KEY_NOPAYMENTS;
-    }
-
-    public int getKEY_FREQUENCY() {
-        return KEY_FREQUENCY;
-    }
-
-    public void setKEY_FREQUENCY(int KEY_FREQUENCY) {
-        this.KEY_FREQUENCY = KEY_FREQUENCY;
-    }
-
-    public boolean isKEY_IS_INCOMERECURRENCE() {
-        return KEY_IS_INCOMERECURRENCE;
-    }
-
-    public void setKEY_IS_INCOMERECURRENCE(boolean KEY_IS_INCOMERECURRENCE) {
-        this.KEY_IS_INCOMERECURRENCE = KEY_IS_INCOMERECURRENCE;
-    }
 }
